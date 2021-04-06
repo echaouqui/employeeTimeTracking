@@ -17,7 +17,7 @@ class DashboardComponent extends Component
 
     public function mount()
     {
-        $this->sessions = Attendance::whereDate('created_at', today())->id()->get();
+        $this->sessions = Attendance::where("user_id", auth()->id())->whereDate('created_at', today())->id()->get();
         // $sessions = Attendance::all();
         $hours = 0;
         $minutes = 0;
@@ -60,7 +60,7 @@ class DashboardComponent extends Component
         $attendance->save();
 
         $this->stat = false;
-        $this->sessions = Attendance::whereDate('created_at', today())->get();
+        $this->sessions = Attendance::whereDate('created_at', today())->id()->get();
 
     }
     public function session_end($id)
@@ -75,7 +75,7 @@ class DashboardComponent extends Component
         $attendance->save();
 
         $this->stat = true;
-        $this->sessions = Attendance::whereDate('created_at', today())->get();
+        $this->sessions = Attendance::whereDate('created_at', today())->id()->get();
         
     }
 
