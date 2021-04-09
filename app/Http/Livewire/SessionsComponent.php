@@ -30,17 +30,12 @@ class SessionsComponent extends Component
         $this->browser = $session->browser;
         $this->platform = $session->platform;
         $this->ip = $session->ip;
-        // $this->desktop = $ag->isDesktop();
-        // $this->browser = $ag->browser();
-        // $p = $ag->platform();
-        // $this->platform = $ag->platform() ." ". $ag->version($p);
-        // $this->ip = request()->ip();
     }
 
     public function session_end($id)
     {
         $this->session->status = "end";
-        $this->session->end = now()->toDateTimeString();
+        $this->session->end = now(new \DateTimeZone('Africa/Casablanca'))->toDateTimeString();
         $this->emitUp('session_end', $id);
     }
 

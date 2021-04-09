@@ -13,4 +13,9 @@ class Attendance extends Model
     {
         return $query->where('user_id', auth()->id());
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

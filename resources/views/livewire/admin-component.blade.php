@@ -1,4 +1,5 @@
 <div>
+
     <div class="mt-16 max-w-7xl mx-auto pb-6 sm:px-6 lg:px-8">
         <div class="px-4 sm:px-0">
             <div class="border-4 border-dashed border-gray-200 rounded-lg min-h-full">
@@ -11,6 +12,9 @@
                                         <tr>
                                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 Date
+                                            </th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                User
                                             </th>
                                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 Starting at
@@ -31,6 +35,9 @@
                                         <tr>
                                             <td class="px-6 py-4 whitespace-nowrap text-gray-900">
                                                 {{ $session->day }}
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-gray-900">
+                                                {{ $session->user->name }}
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-gray-900">
                                                 {{ $session->start }}
@@ -58,3 +65,4 @@
         </div>
     </div>
 </div>
+

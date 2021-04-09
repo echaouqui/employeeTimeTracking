@@ -15,9 +15,11 @@
                         <x-jet-nav-link href="{{ route('logs') }}" :active="request()->routeIs('logs')">
                             {{ __('logs') }}
                         </x-jet-nav-link>
-                        {{-- <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
+                        @if (auth()->id() == 20)
+                        <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
                             {{ __('admin') }}
-                        </x-jet-nav-link> --}}
+                        </x-jet-nav-link>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -103,9 +105,11 @@
             <x-jet-responsive-nav-link href="{{ route('logs') }}" :active="request()->routeIs('logs')">
                 {{ __('logs') }}
             </x-jet-responsive-nav-link>
-            {{-- <x-jet-responsive-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
+            @if (auth()->id() == 1)
+            <x-jet-responsive-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
                 {{ __('admin') }}
-            </x-jet-responsive-nav-link> --}}
+            </x-jet-responsive-nav-link>
+            @endif
         </div>
       <div class="pt-4 pb-3 border-t border-gray-700">
         <div class="flex items-center px-5">
